@@ -16,10 +16,6 @@
     <meta property="og:description" content="{{seo.description}}">
     <meta property="og:image" content="{{seo.image}}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="{{seo.url}}">
-    <meta name="twitter:title" content="{{seo.title}}">
-    <meta name="twitter:description" content="{{seo.description}}">
-    <meta name="twitter:image" content="{{seo.image}}">
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -38,6 +34,7 @@
       <div class="content" role="main">
         <!-- this is the start of content for our page -->
         <h1 class="title">Hello Node!</h1>
+        
         <!-- add text indicating that we've changed color OR had an error -->
         {{#if color}}
           <p class="color-info">
@@ -80,12 +77,10 @@
           <!-- this randomize link communicates with the server (server.js) using a querystring and GET request instead of a form POST -->
           Can't decide? <a href="?randomize=go">Use a random color!</a>
         </div>
+        <div class="illo-container">
+          <img src="https://cdn.glitch.com/c62efef6-1e75-45cf-b248-afeccdda9477%2Fillustration.svg?v=1618196069568" class="illustration" alt="Node logo" />
+        </div>
         
-        <img
-          src="https://cdn.glitch.com/c62efef6-1e75-45cf-b248-afeccdda9477%2Fillustration.svg?v=1618196069568"
-          class="illustration"
-          alt="Javascript logo"
-        />
       </div>
     </div>
     <!-- the footer holds our remix button — you can use it for structure or cut it out ✂ -->
