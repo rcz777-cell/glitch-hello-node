@@ -16,16 +16,12 @@
     <meta property="og:description" content="{{seo.description}}">
     <meta property="og:image" content="{{seo.image}}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="{{seo.url}}">
-    <meta name="twitter:title" content="{{seo.title}}">
-    <meta name="twitter:description" content="{{seo.description}}">
-    <meta name="twitter:image" content="{{seo.image}}">
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
 
-    <!-- if we've set a custom color (search or random) we change title text color with this style block -->
-    {{#if color}}
+    <!-- this is a handlebars IF statement, checking for a custom "color" parameter set in server.js -->
+    {{#if color}} 
     <style>
       .title {
         color: {{color}};
@@ -35,54 +31,72 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="content">
-        <div class="title">Hey, Node!</div>
+      <div class="content" role="main">
+        <!-- this is the start of content for our page -->
+        <h1 class="title">Hello Node!</h1>
         
         <!-- add text indicating that we've changed color OR had an error -->
         {{#if color}}
-          <div class="color-info">Now available in <b>{{color}}</b>!</div>
+          <p class="color-info">
+            Now available in <b>{{color}}</b>!
+          </p>
         {{/if}}  
         {{#if colorError}}
-          <div class="color-info">Hmm. Couldn't find <b>"{{colorError}}"</b>. <a href="?randomize=go">Try a random color?</a></div>
-        {{/if}}  
+          <p class="color-info">
+            Hmm. Couldn't find <b>"{{colorError}}"</b>. 
+            <a href="?randomize=go">Try a random color?</a>
+          </p>
+        {{/if}}
         
-        <img
-          src="illustration.svg"
-          class="illustration"
-          alt="Javascript logo"
-        />
-        
-        <div>
-          <!-- the "what's your favorite color?" form -->
+        <div class="color-form">
+          <!-- our default paragraph/message -->
+          {{#unless colorError}}
+            {{#unless color}}
+            <!-- There are fancier ways to do this, but nesting two "#unless" statements sets up a "if these are both missing..." condition -->
+            <p>
+              Learn about communication with a server by talking about color.
+            </p>
+            {{/unless}}
+          {{/unless}}
+          
+          <!-- the "what's your favorite color?" form sends a POST to the server, check server.js to see how it works -->
           <form class="color-search" method="post">
               <label for="color">
-                What's your favorite color?
+                <!-- we use the handlebars "#if" statement so the form can adapt to its situation -->
+                {{#if color}}
+                  Try another color?<br>
+                {{else}}
+                  What's your favorite color?<br>
+                {{/if}}
                 <input id="color" name="color" required="required" type="text">
               </label>
 
             <button type="submit">Submit</button>
           </form>
           
-          <!-- this randomize link communicates with the server using a querystring instead of a form post -->
-          <a href="?randomize=go">Pick a random color for me</a>
+          <!-- this randomize link communicates with the server (server.js) using a querystring and GET request instead of a form POST -->
+          Can't decide? <a href="?randomize=go">Use a random color!</a>
         </div>
+        <div class="illo-container">
+          <img src="https://cdn.glitch.com/c62efef6-1e75-45cf-b248-afeccdda9477%2Fillustration.svg?v=1618196069568" class="illustration" alt="Node logo" />
+        </div>
+        
       </div>
     </div>
-    <nav class="navigation">
+    <!-- the footer holds our remix button — you can use it for structure or cut it out ✂ -->
+    <footer class="footer">
+      <div class="links"></div>
       <a
-        href="https://glitch.com/edit/#!/remix/glitch-hello-node"
         class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-node"
       >
         <img
-          src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576"
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
         />
         Remix on Glitch
       </a>
-    </nav>
-
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
+    </footer>
   </body>
 </html>
