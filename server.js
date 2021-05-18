@@ -80,7 +80,7 @@ fastify.post("/", function(request, reply) {
         seo: seo
       };
     } else {
-      // Not found, return the value as the error property
+      // No luck! Return the user value as the error property
       params = {
         colorError: request.body.color,
         seo: seo
