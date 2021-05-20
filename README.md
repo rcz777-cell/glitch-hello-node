@@ -1,6 +1,6 @@
 # Hello Node!
 
-This project includes a backend API and frontend web page that connects to it. The page presents a form the visitor can use to submit a color name, sending the submitted value to the API running on the server. The API returns info to the page that allows it to update the display with the chosen color.
+This project includes a Node.js server script and a web page that connects to it. The front-end page presents form the visitor can use to submit a color name, sending the submitted value to the back-end API running on the server. The server API returns info to the page that allows it to update the display with the chosen color. 🎨
 
 [Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework to explore basic templating with [Handlebars](https://handlebarsjs.com/).
 
@@ -10,7 +10,7 @@ This project includes a backend API and frontend web page that connects to it. T
 
 ← `public/style.css`: The styling rules for the pages in your site.
 
-← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site backend–one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page.
+← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
 
 ← `src/`: This folder holds the site template along with some basic data files.
 
