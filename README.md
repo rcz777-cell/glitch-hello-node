@@ -20,7 +20,7 @@ This project includes a Node.js server script and a web page that connects to it
 
 ← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
 
-## Next steps
+## Next steps 🚀
 
 Let's keep track of the submitted favorites using an array. First add this code near the top of `server.js`:
 
