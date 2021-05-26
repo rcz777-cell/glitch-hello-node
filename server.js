@@ -1,6 +1,6 @@
 /*
 This is the main Node.js server script for your project
-- The two endpoints this backend provides are defined in fastify.get and fastify.post below
+- The two endpoints this back-end provides are defined in fastify.get and fastify.post below
 */
 
 const path = require("path");
@@ -36,7 +36,7 @@ if (seo.url === "glitch-default") {
   seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
 }
 
-// Our home page route, this pulls from src/pages/index.hbs
+// Our home page route, this returns src/pages/index.hbs with data built into it
 fastify.get("/", function(request, reply) {
   // params is an object we'll pass to our handlebars template
   let params = { seo: seo };
