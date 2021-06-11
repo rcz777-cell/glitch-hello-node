@@ -4,6 +4,10 @@ This project includes a Node.js server script and a web page that connects to it
 
 [Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework and explores basic templating with [Handlebars](https://handlebarsjs.com/).
 
+## Prerequisites
+
+You'll get best use out of this project if you're familiar with basic JavaScript. If you've written JavaScript for client-side web pages this is a little different because it uses server-side JS, but the syntax is the same!
+
 ## What's in this project?
 
 ← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
@@ -40,6 +44,8 @@ console.log(favorites);
 Click __Tools__ > __Logs__ at the bottom of Glitch to see the log statement in action when you submit new colors through the form.
 
 Clearly this is not a robust data storage approach and won't persist for long! Your Node apps can use a variety of databases, like [SQLite](https://glitch.com/~hello-sqlite) and [Airtable](https://glitch.com/~airtable-guestbook-starter).
+
+___Want a basic template version of this project to build your own Node.js app? Check out [Minimal Node](https://glitch.com/edit/#!/remix/glitch-mvp-node)!___
 
 ![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
