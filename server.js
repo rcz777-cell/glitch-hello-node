@@ -11,7 +11,7 @@ const fastify = require("fastify")({
   logger: false
 });
 
-// ADD FAVORITES ARRAY VARIABLE FROM README HERE
+// ADD FAVORITES ARRAY VARIABLE FROM TODO HERE
 
 
 // Setup our static files
@@ -81,7 +81,7 @@ fastify.post("/", function(request, reply) {
   
   // If it's not empty, let's try to find the color
   if (color) {
-    // ADD CODE FROM README HERE TO SAVE SUBMITTED FAVORITES
+    // ADD CODE FROM TODO HERE TO SAVE SUBMITTED FAVORITES
     
     // Load our color data file
     const colors = require("./src/colors.json");

@@ -26,24 +26,9 @@ You'll get best use out of this project if you're familiar with basic JavaScript
 
 ← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
 
-## Next steps 🚀
+## Try this next 🏗️
 
-Let's keep track of the submitted favorites using an array. First add this code near the top of `server.js`:
-
-```js
-const favorites = [];
-```
-
-In the `POST` route, inside the `if(color)` block, add this code to save the submitted value to the array, and write it to the console:
-
-```js
-favorites.push(color);
-console.log(favorites);
-```
-
-Click __Tools__ > __Logs__ at the bottom of Glitch to see the log statement in action when you submit new colors through the form.
-
-Clearly this is not a robust data storage approach and won't persist for long! Your Node apps can use a variety of databases, like [SQLite](https://glitch.com/~hello-sqlite) and [Airtable](https://glitch.com/~airtable-guestbook-starter).
+Take a look in `TODO.md` for next steps you can try out in your new site!
 
 ___Want a basic template version of this project to build your own Node.js app? Check out [Minimal Node](https://glitch.com/edit/#!/remix/glitch-mvp-node)!___
 
