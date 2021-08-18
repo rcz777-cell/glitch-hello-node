@@ -16,6 +16,10 @@ You'll get best use out of this project if you're familiar with basic JavaScript
 
 ← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
 
+← `public/manifest.json`: The manifest allows the site to function as a PWA (Progressive Web App), specifying metadata that determines how the app will appear and behave natively when installed on the user device.
+
+← `sw.js`: The Service Worker JavaScript sets the app up to cache content for fast delivery as a PWA.
+
 ← `package.json`: The NPM packages for your project's dependencies.
 
 ← `src/`: This folder holds the site template along with some basic data files.

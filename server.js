@@ -1,3 +1,4 @@
+
 /**
 * This is the main Node.js server script for your project
 * Check out the two endpoints this back-end API provides in fastify.get and fastify.post below
@@ -11,7 +12,7 @@ const fastify = require("fastify")({
   logger: false
 });
 
-// ADD FAVORITES ARRAY VARIABLE FROM TODO HERE
+// ADD FAVORITES ARRAY VARIABLE FROM TODO HER
 
 
 // Setup our static files
