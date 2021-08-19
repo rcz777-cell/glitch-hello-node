@@ -15,30 +15,20 @@ self.addEventListener("install", e => {
   );
 });
 
-// Cache falling back to network approach - we only initially listed the home route to cache
+// Network falling back to cache approach - we only cache the home route
 // https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
 self.addEventListener("fetch", function(event) {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      //Do we have something in the cache - return it
-      if (response !== undefined) {
-        return response;
-      } else {
-        // Nothing in cache so try fetching
-        return fetch(event.request)
-          .then(function(response) {
-            // Add to the cache
-            caches.open("hello-node-pwa").then(function(cache) {
-              // Clone the cache https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match
-              cache.put(event.request, response.clone());
-            });
-            return response;
-          })
-          .catch(function() {
-            // If no available cache and no connection return the homepage as a fallback
-            return caches.match("/");
-          });
-      }
+    // Try fetching from network
+    fetch(event.request).catch(() => {
+      // Request failed - maybe we're offline - check cache
+      caches.match(event.request).then(response => {
+        // We have a cache match so return it
+        if (response !== undefined) return response;
+
+        // No cache match so return homepage as fallback
+        return caches.match("/");
+      });
     })
   );
 });
