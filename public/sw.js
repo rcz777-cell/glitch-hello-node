@@ -17,7 +17,7 @@ self.addEventListener("install", e => {
 
 // Network falling back to cache approach - we only cache the home route
 // https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", event => {
   event.respondWith(
     // Try fetching from network
     fetch(event.request).catch(() => {
