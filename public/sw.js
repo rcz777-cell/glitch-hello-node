@@ -21,13 +21,10 @@ self.addEventListener("fetch", event => {
   event.respondWith(
     // Try fetching from network
     fetch(event.request).catch(() => {
-      // Request failed - maybe we're offline - check cache
-      caches.match(event.request).then(response => {
-        // We have a cache match so return it
-        if (response !== undefined) return response;
-
-        // No cache match so return homepage as fallback
-        return caches.match("/");
+      // Request failed - maybe we're offline - return cache
+      return caches.match(event.request, {
+        ignoreSearch: true,
+        ignoreMethod: true
       });
     })
   );
