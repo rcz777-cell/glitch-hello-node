@@ -4,7 +4,7 @@ This project includes a Node.js server script and a web page that connects to it
 
 [Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework and explores basic templating with [Handlebars](https://handlebarsjs.com/).
 
-_Last updated: 14 August 2023_
+_Last updated: 25 January 2024_
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ You'll get best use out of this project if you're familiar with basic JavaScript
 
 Take a look in `TODO.md` for next steps you can try out in your new site!
 
-___Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!___
+**_Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!_**
 
 ![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
