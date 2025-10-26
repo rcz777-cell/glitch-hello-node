@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Names</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    form {
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Submit Names</h1>
+
+  <form id="nameForm">
+    <label for="nameInput">Enter name:</label>
+    <input type="text" id="nameInput" name="name" required />
+    <button type="submit">Add</button>
+  </form>
+
+  <section>
+    <h2>Submitted Names</h2>
+    <ul id="namesList">
+      <!-- Submitted names will appear here -->
+    </ul>
+  </section>
+
+  <script>
+    const form = document.getElementById('nameForm');
+    const nameInput = document.getElementById('nameInput');
+    const namesList = document.getElementById('namesList');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = nameInput.value.trim();
+      if (name !== '') {
+        const li = document.createElement('li');
+        li.textContent = name;
+        namesList.appendChild(li);
+        nameInput.value = '';
+        nameInput.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
 
